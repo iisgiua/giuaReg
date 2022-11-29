@@ -1,0 +1,12 @@
+# creazione container iniziale dell'ambiente
+
+FROM node:latest
+
+WORKDIR /var/www/giuaschool-giuareg
+
+RUN \
+  npx create-expo-app giuaReg > /dev/null 2> /dev/null
+
+EXPOSE 19000
+
+CMD /bin/bash
