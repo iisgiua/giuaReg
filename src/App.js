@@ -52,6 +52,7 @@ const App = () => {
         <Stack.Screen
           name="web"
           component={WebScreen}
+          options={{ title: 'Vai al registro' }}
         />
       </Stack.Navigator>
       <StatusBar style="light" />

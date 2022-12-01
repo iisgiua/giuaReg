@@ -3,7 +3,6 @@
     "name": "giuaReg",
     "slug": "giuaReg",
     "version": "3.0.0",
-    "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
@@ -40,6 +39,12 @@
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
+      [
+        "expo-screen-orientation",
+        {
+          "initialOrientation": "DEFAULT"
+        }
+      ]
     ],
     "extra": {
       "version": "GiuaReg 3.0",

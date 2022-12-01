@@ -1,10 +1,7 @@
 import * as React from 'react';
-import { Text, View, TextInput, ScrollView } from 'react-native';
+import { Text, View, ScrollView } from 'react-native';
 import Modal from "react-native-modal";
 import * as SecureStore from 'expo-secure-store';
-import RNPickerSelect from 'react-native-picker-select';
-import { Chevron } from 'react-native-shapes';
-import Icon from '@expo/vector-icons/FontAwesome';
 import Checkbox from 'expo-checkbox';
 import Pressable from './PressableComponent';
 import Styles from './Styles';

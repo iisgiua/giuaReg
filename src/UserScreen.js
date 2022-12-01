@@ -2,8 +2,7 @@ import * as React from 'react';
 import { Text, View, TextInput, ScrollView } from 'react-native';
 import Modal from "react-native-modal";
 import * as SecureStore from 'expo-secure-store';
-import RNPickerSelect from 'react-native-picker-select';
-import { Chevron } from 'react-native-shapes';
+import { Picker } from '@react-native-picker/picker';
 import Icon from '@expo/vector-icons/FontAwesome';
 import Constants from 'expo-constants';
 import Pressable from './PressableComponent';
@@ -112,52 +111,40 @@ export default ({ navigation }) => {
     <ScrollView style={Styles.container}>
       <Text style={Styles.title}>Dati per l'accesso al registro</Text>
       <Text style={Styles.label}>Tipo di accesso:</Text>
-      <RNPickerSelect
-        style={Styles.picker}
-        onValueChange={(val) => {setType(val)}}
-        value={type}
-        useNativeAndroidPickerStyle={false}
-        Icon={() => {
-          return <Chevron size={1.5} color="#999999" />;
-        }}
-        placeholder={{
-          label: 'Scegli il tipo di accesso...',
-          value: null,
-          color: '#aaaaaa',
-        }}
-        items={[
-          {label: "Usa SPID", value: "spid"},
-          {label: "Usa GOOGLE", value: "google"},
-          {label: "Usa credenziali del registro", value: "password"},
-        ]}
-      />
+      <View style={Styles.picker}>
+        <Picker
+          selectedValue={type}
+          onValueChange={(val) => { setType(val); setManager(''); }}
+        >
+          <Picker.Item style={Styles.pickerItem}
+            label="Scegli il tipo..." value="" enabled={type == ''} color= '#aaaaaa'
+          />
+          <Picker.Item style={Styles.pickerItem} label="Usa SPID" value="spid" />
+          <Picker.Item style={Styles.pickerItem} label="Usa GOOGLE" value="google" />
+          <Picker.Item style={Styles.pickerItem} label="Usa credenziali del registro" value="password" />
+        </Picker>
+      </View>
       <Text style={type == 'spid' ? Styles.label : Styles.labelDisabled}>Gestore SPID:</Text>
-      <RNPickerSelect
-        style={Styles.picker}
-        onValueChange={(val) => setManager(val)}
-        value={type == 'spid' ? manager : null}
-        disabled={type != 'spid'}
-        useNativeAndroidPickerStyle={false}
-        Icon={() => {
-          return <Chevron size={1.5} color="#999999" />;
-        }}
-        placeholder={{
-          label: 'Scegli il gestore...',
-          value: null,
-          color: '#aaaaaa',
-        }}
-        items={[
-          {label: "Aruba ID", value: "IdAruba"},
-          {label: "InfoCert ID", value: "IdInfocert"},
-          {label: "Intesa ID", value: "IdIntesa"},
-          {label: "Lepida ID", value: "IdLepida"},
-          {label: "Namirial ID", value: "IdNamirial"},
-          {label: "Poste ID", value: "IdPoste"},
-          {label: "Sielte ID", value: "IdSielte"},
-          {label: "SpidItalia", value: "IdRegister"},
-          {label: "TIM ID", value: "IdTim"},
-        ]}
-      />
+      <View style={Styles.picker}>
+        <Picker
+          selectedValue={manager}
+          onValueChange={(val) => {setManager(val)}}
+          enabled={type == 'spid'}
+        >
+          <Picker.Item style={Styles.pickerItem}
+            label="Scegli il gestore..." value="" enabled={manager == ''} color= '#aaaaaa'
+          />
+          <Picker.Item style={Styles.pickerItem} label="Aruba ID" value="IdAruba" />
+          <Picker.Item style={Styles.pickerItem} label="InfoCert ID" value="IdInfocert" />
+          <Picker.Item style={Styles.pickerItem} label="Intesa ID" value="IdIntesa" />
+          <Picker.Item style={Styles.pickerItem} label="Lepida ID" value="IdLepida" />
+          <Picker.Item style={Styles.pickerItem} label="Namirial ID" value="IdNamirial" />
+          <Picker.Item style={Styles.pickerItem} label="Poste ID" value="IdPoste" />
+          <Picker.Item style={Styles.pickerItem} label="Sielte ID" value="IdSielte" />
+          <Picker.Item style={Styles.pickerItem} label="SpidItalia" value="IdRegister" />
+          <Picker.Item style={Styles.pickerItem} label="TIM ID" value="IdTim" />
+        </Picker>
+      </View>
       <Text style={Styles.label}>Nome utente:</Text>
       <TextInput
         style={Styles.input}
