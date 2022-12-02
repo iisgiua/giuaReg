@@ -217,6 +217,7 @@ export default ({ navigation }) => {
       const response = await fetch(infoUrl, {
         header: {'Content-Type': 'application/json'}
       });
+      console.log(response);
       const json = await response.json();
       const connectUrl = webSite+'app/connect/'+json.token;
       WebBrowser.openAuthSessionAsync(connectUrl, null, {createTask: false, showTitle: false})

@@ -48,7 +48,7 @@
     ],
     "extra": {
       "version": "GiuaReg 3.0",
-      "url": "http://192.168.1.180/giuaschool/public/",
+      "url": "https://registro.giua.edu.it/",
       "school": "I.I.S. Michele Giua",
       "eas": {
         "projectId": "76d3d2af-7012-440b-b133-4fc9c24e3603"
