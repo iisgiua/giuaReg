@@ -8,7 +8,7 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#99eeff"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -26,7 +26,7 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
+        "backgroundColor": "#99eeff"
       },
       "permissions": [
         "android.permission.READ_EXTERNAL_STORAGE",
@@ -47,7 +47,7 @@
       ]
     ],
     "extra": {
-      "version": "GiuaReg 3.0",
+      "version": "giuaReg 3.0",
       "url": "https://registro.giua.edu.it/",
       "school": "I.I.S. Michele Giua",
       "eas": {

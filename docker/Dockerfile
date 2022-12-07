@@ -1,17 +1,19 @@
 FROM node:latest
-LABEL version=1.0.0
 
-WORKDIR /var/www/giuaschool-giuareg/giuaReg
+### installa ambiente di sviluppo
+RUN npm install -g npm@latest expo-cli@latest eas-cli@latest
 
-COPY *.js *.json ./
-COPY ./src ./src
-COPY ./assets ./assets
+### installa dipendenze
+RUN mkdir /opt/react_native_app
+WORKDIR /opt/react_native_app
+COPY ./*.json ./*.js ./
+RUN npm install
 
-RUN \
-  npm install && \
-  npm update
+### copia l'applicazione
+COPY . .
 
+### porta del server di sviluppo
 EXPOSE 19000
 
-CMD \
-  npm start
+### comando predefinito per avviare il server di sviluppo
+CMD npm start --clear-cache
