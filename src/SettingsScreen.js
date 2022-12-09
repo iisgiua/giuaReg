@@ -9,7 +9,7 @@ import Styles from './Styles';
 
 export default ({ navigation }) => {
   // definizione dello stato
-  const [hideScreen, setHideScreen] = React.useState(false);
+  const [hideScreen, setHideScreen] = React.useState(true);
   const [modalVisible, setModalVisible] = React.useState(false);
   const [modalError, setModalError] = React.useState(false);
   const [modalTitle, setModalTitle] = React.useState('');
