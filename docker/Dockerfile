@@ -4,8 +4,8 @@ FROM node:latest
 RUN npm install -g npm@latest expo-cli@latest eas-cli@latest
 
 ### installa dipendenze
-RUN mkdir /opt/react_native_app
-WORKDIR /opt/react_native_app
+RUN mkdir /opt/giuaReg
+WORKDIR /opt/giuaReg
 COPY ./*.json ./*.js ./
 RUN npm install
 

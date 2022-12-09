@@ -14,6 +14,7 @@ const Home = ({ navigation }) => {
   const [user, setUser] = React.useState('');
   const [password, setPassword] = React.useState('');
   const [webSite, setWebSite] = React.useState('');
+  const [hideScreen, setHideScreen] = React.useState(false);
 
   // legge stato da storage cifrato
   const secureRead = async () => {
@@ -26,6 +27,16 @@ const Home = ({ navigation }) => {
       setPassword(state.password);
       setWebSite(state.webSite);
     }
+    result = await SecureStore.getItemAsync('settingsData');
+    if (result) {
+      state = JSON.parse(result);
+      setHideScreen(state.hideScreen);
+    } else {
+      state = {
+        hideScreen: hideScreen,
+      };
+      await SecureStore.setItemAsync('settingsData', JSON.stringify(state));
+    }  
   };
 
   // inizializza dati
