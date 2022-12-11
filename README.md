@@ -1,5 +1,5 @@
 # giuaReg
-_Web App per il registro giua@school_
+_App per il registro giua@school_
 
 Si tratta di un'app per dispositivi mobili progettata per l'utilizzo del
 [registro elettronico giua@school](https://iisgiua.github.io/giuaschool-docs/).
@@ -11,4 +11,9 @@ credenziali di accesso.
 E' possibile utilizzare uno dei seguenti metodi di accesso al registro elettronico:
 - credenziali fornite dalla scuola;
 - utente Google;
-- SPID.
+- utente SPID.
+
+
+## Scarica l'app giuaReg
+
+[dist/giuaReg-v3.0.apk](giuaReg-v3.0.apk)

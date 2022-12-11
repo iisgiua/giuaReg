@@ -1,6 +1,6 @@
 {
   "name": "giuaReg",
-  "version": "3.0.0",
+  "version": "3.0",
   "main": "src/App.js",
   "scripts": {
     "start": "expo start",

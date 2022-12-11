@@ -3,17 +3,22 @@
     "version": ">= 2.8.0"
   },
   "build": {
-    "development": {
+    "devel": {
       "developmentClient": true,
       "distribution": "internal",
     },
-    "preview": {
+    "custom": {
       "distribution": "internal",
       "android": {
         "buildType": "apk"
+      },
+      "env": {
+        "URL": "https://registro.giua.edu.it/",
+        "SCHOOL": "I.I.S. Michele Giua",
       }
     },
-    "production": {
+    "prod": {
+      "distribution": "internal",
       "android": {
         "buildType": "apk"
       }
