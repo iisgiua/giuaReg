@@ -16,4 +16,4 @@ E' possibile utilizzare uno dei seguenti metodi di accesso al registro elettroni
 
 ## Scarica l'app giuaReg
 
-[dist/giuaReg-v3.0.apk](giuaReg-v3.0.apk)
+[giuaReg-v3.0.apk](dist/giuaReg-v3.0.apk)
